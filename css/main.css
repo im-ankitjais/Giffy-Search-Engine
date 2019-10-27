@@ -40,3 +40,26 @@ h1{
 	float: left;
 	margin-right:3%;
 }
+#bt-go{
+	padding: 15px;
+	font-size: 20px;
+	box-sizing: content-box;
+	animation-name: go;
+	animation-duration: 4s;
+	animation-direction:alternate;
+	animation-iteration-count: infinite;
+	
+	
+}
+#bt-go:hover{
+	background:rgba(255, 255, 255, 1);
+	opacity: 0.6;
+	
+}
+@keyframes go{
+	0%{font-family: cursive;background-color: red;font-size: 14px}
+	25%  {font-family: fantasy;background-color: dodgerblue;font-size: 16px}
+    50%  {font-family: inherit;background-color:yellow;font-size: 18px}
+    75%  {font-family: monospace;background-color: blue;font-size: 20px}
+    100% {font-family: serif;background-color: orange;font-size: 22px}
+}
