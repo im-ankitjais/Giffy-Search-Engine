@@ -1,65 +1,110 @@
+/* Globals */
+
+/* Palette:
+	dark: #273E47
+	light: #FCFAF9
+	pink: #DB5461
+	brown: #333333
+	green: #48E5C2
+ */
+
+:root {
+	--background: #273E47;
+	--foreground: #FCFAF9;
+	--highlight: #DB5461;
+}
+
+* { /* Necessary for text inputs and buttons */
+	font-family: 'Josefin Sans', sans-serif;
+}
+
 body {
 	width: 80%;
 	max-width: 1024px;
 	margin: 0 auto;
-	background-color: cornflowerblue;
+	background-color: var(--background);
+	color: var(--foreground);
 }
-h1{
-	font-size: 50px;
-	text-align: center;;
+
+/* Header */
+
+.header h1 {
+	animation: 1s ease 0s 1 slideInFromTop;
+	font-size: 4rem;
+	text-align: center;
 }
+
+.header .searchbar {
+	animation: 0.5s ease 0s 1 slideInFromTop;
+	height: 4rem;
+}
+
+.header input[type=text] {
+	transition: 0.2s;
+	font-size: 1.5rem;
+	width: 80%;
+	padding-left: 2rem;
+	height: 100%;
+	border: none;
+	border-radius: 1.5rem 2px;
+}
+
+.header input[type=text]:focus {
+	border-radius: 1.5rem;
+	border: solid 2px var(--highlight);
+}
+
+.header button {
+	animation: 0.75s ease 0s 1 slideInFromLeft;
+	transition: 0.2s;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	width: 8rem;
+	cursor: pointer;
+	border: none;
+	color: var(--foreground);
+	background-color: var(--highlight);
+	border-radius: 1rem;
+	position: relative;
+	right: 2rem;
+	z-index: -1;
+	height: 104%;
+	padding-left: 2rem;
+}
+
+.header button:hover {
+	color: var(--highlight);
+	background-color: var(--foreground);
+	border-radius: 1rem;
+	border: solid 2px var(--highlight);
+}
+
+@keyframes slideInFromTop {
+  0% { transform: translateY(-400%); }
+  100% { transform: translateY(0); }
+}
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-400%); }
+  100% { transform: translateX(0); }
+}
+
+/* Container */
 
 .container-padding50 {
-	padding-top: 50px;
-}
-
-.container-textinput {
-	width: 80%;
-	display: inline-block;
-	padding: 20px;
-	font-size: 16px;
-	font-family: Helvetica, sans-serif;
-}
-
-.container-button {
-	width: 10%;
-	display: inline-block;
-	padding: 20px;
-	background-color: green;
-	color: white;
-	font-size: 16px;
-	font-family: Helvetica, sans-serif;
-
-	border: 1px solid green;
-	border-radius: 5px;
+	padding-top: 4rem;
 }
 
 .container-image {
+	transition: 0.3s;
 	width: 30%;
+	border-radius: 1.5rem 2px;
+	border: solid var(--foreground) 2px;
 	display: block;
 	float: left;
-	margin-right:3%;
+	margin: 0.5rem;
 }
-#bt-go{
-	padding: 15px;
-	font-size: 20px;
-	box-sizing: content-box;
-	animation-name: go;
-	animation-duration: 4s;
-	animation-direction:alternate;
-	animation-iteration-count: infinite;
-	
-	
-}
-#bt-go:hover{
-	background:rgba(255, 255, 255, 1);
-	opacity: 0.6;
-	
-}
-@keyframes go{
-	0%{font-family: cursive;background-color: red;font-size: 14px}
-	25%  {font-family: fantasy;background-color: dodgerblue;font-size: 16px}
-    50%  {font-family: inherit;background-color:yellow;font-size: 18px}
-    75%  {font-family: monospace;background-color: blue;font-size: 20px}
-    100% {font-family: serif;background-color: orange;font-size: 22px}
+
+.container-image:hover {
+	border-radius: 1.5rem;
+	border-color: var(--highlight);
 }
