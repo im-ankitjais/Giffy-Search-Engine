@@ -55,7 +55,7 @@ body {
 }
 
 .header button {
-	animation: 0.75s ease ;
+	animation: 0.75s ease 0s 1 slideInFromLeft ;
 	transition: 0.2s;
 	font-size: 1.5rem;
 	text-transform: uppercase;
