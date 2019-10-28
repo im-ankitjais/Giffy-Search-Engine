@@ -43,9 +43,9 @@ h1{
 #bt-go{
 	padding: 15px;
 	font-size: 20px;
-	box-sizing: content-box;
+	
 	animation-name: go;
-	animation-duration: 4s;
+	animation-duration: 2s;
 	animation-direction:alternate;
 	animation-iteration-count: infinite;
 	
@@ -53,13 +53,13 @@ h1{
 }
 #bt-go:hover{
 	background:rgba(255, 255, 255, 1);
-	opacity: 0.6;
-	
+	opacity: 1;
+	transform: skewX(-5deg);
 }
 @keyframes go{
-	0%{font-family: cursive;background-color: red;font-size: 14px}
-	25%  {font-family: fantasy;background-color: dodgerblue;font-size: 16px}
-    50%  {font-family: inherit;background-color:yellow;font-size: 18px}
-    75%  {font-family: monospace;background-color: blue;font-size: 20px}
-    100% {font-family: serif;background-color: orange;font-size: 22px}
+	0%{font-family: cursive;background-color: rgb(245, 180, 180);font-size: 20px}
+	25%  {font-family: cursive;background-color: rgb(248, 153, 153);font-size: 20px}
+    50%  {font-family: cursive;background-color:rgb(247, 97, 97);font-size: 20px}
+    75%  {font-family: cursive;background-color: rgb(252, 66, 66);font-size: 20px}
+    100% {font-family: cursive;background-color: rgb(255, 0, 21);font-size: 20px}
 }
