@@ -52,6 +52,7 @@ body {
 .header input[type=text]:focus {
 	border-radius: 1.5rem;
 	border: solid 2px var(--highlight);
+    outline:0;
 }
 
 .header button {
