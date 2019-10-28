@@ -1,20 +1,19 @@
-document.querySelector(".js-go").addEventListener('click', function() {
+document.querySelector(".js-go").addEventListener('click', function () {
 	var inputValue = document.querySelector('.js-userinput').value;
-		var userInput = getUserInput();
-	searchGiphy( userInput );
+	var userInput = getUserInput();
+	searchGiphy(userInput);
 
 });
 
 document.querySelector('.js-userinput').addEventListener('keyup', function (e) {
 	if (e.which === 13) {
- 		var userInput = getUserInput();
- 		searchGiphy( userInput );
-    }
+		var userInput = getUserInput();
+		searchGiphy(userInput);
+	}
 });
 
 function getUserInput() {
 	var inputValue = document.querySelector('.js-userinput').value;
-
 	return inputValue;
 }
 
@@ -22,21 +21,21 @@ function getUserInput() {
 
 
 
-function searchGiphy( searchQuery ) {
+function searchGiphy(searchQuery) {
 	var url = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q=" + searchQuery;
 
 	// AJAX Request
 	var GiphyAJAXCall = new XMLHttpRequest();
-	GiphyAJAXCall.open( 'GET', url );
+	GiphyAJAXCall.open('GET', url);
 	GiphyAJAXCall.send();
 
 
-	GiphyAJAXCall.addEventListener('load', function( data ) {
+	GiphyAJAXCall.addEventListener('load', function (data) {
 
-			var actualData = data.target.response;
-			pushToDOM(actualData);
-			console.log(actualData);
-		
+		var actualData = data.target.response;
+		pushToDOM(actualData);
+		console.log(actualData);
+
 	});
 
 }
@@ -50,9 +49,9 @@ function searchGiphy( searchQuery ) {
 
 
 
-function pushToDOM( response ) {
+function pushToDOM(response) {
 	// turn response into real javascript object
-	response = JSON.parse( response );
+	response = JSON.parse(response);
 	// drill down to the data array
 	var images = response.data;
 
@@ -63,11 +62,11 @@ function pushToDOM( response ) {
 	container.innerHTML = "";
 
 	// loop through data array and add IMG html
-	images.forEach(function(image){
+	images.forEach(function (image) {
 		// find img src
 		var src = image.images.fixed_height.url;
 
 		// concatenate a new IMG tag
-		container.innerHTML += "<img src='"+ src +"' class='container-image' />";
+		container.innerHTML += "<img src='" + src + "' class='container-image' />";
 	});
 }
