@@ -40,12 +40,48 @@ function searchGiphy(searchQuery) {
 
 }
 
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename || 'download';
+  // const clickHandler = () => {
+  //   setTimeout(() => {
+  //     URL.revokeObjectURL(url);
+  //     this.removeEventListener('click', clickHandler);
+  //   }, 150);
+  // };
+  // a.addEventListener('click', clickHandler, false);
+  // a.click();
+  return a;
+}
+
+function downloadGiphy(file_url) {
+	fetch(file_url)
+  	.then(response => response.blob())
+  	.then(blob => {
+			// Create a new FileReader innstance
+			const reader = new FileReader();
+			// Add a listener to handle successful reading of the blob
+			reader.addEventListener('load', () => {
+				const downloadLink = downloadBlob(blob, file_url.split('/').pop());
+				document.body.appendChild(downloadLink);
+				downloadLink.click()
+				document.body.removeChild(downloadLink);
+			});
+    // Start reading the content of the blob
+    // The result should be a base64 data URL
+    reader.readAsDataURL(blob);
+  });
+	
+}
 
 
-
-
-
-
+function handleGiphyClick(e) {
+	file_url = e.src;
+	console.log("Downloading: " + file_url);
+	downloadGiphy(file_url, e);
+}
 
 
 
@@ -67,6 +103,6 @@ function pushToDOM(response) {
 		var src = image.images.fixed_height.url;
 
 		// concatenate a new IMG tag
-		container.innerHTML += "<img src='" + src + "' class='container-image' />";
+		container.innerHTML += "<img src='" + src + "' class='container-image' onclick='handleGiphyClick(this)'/>";
 	});
 }
