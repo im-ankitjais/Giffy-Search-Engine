@@ -69,4 +69,29 @@ function pushToDOM(response) {
 		// concatenate a new IMG tag
 		container.innerHTML += "<img src='" + src + "' class='container-image' />";
 	});
+
+	document.querySelectorAll('.container-image').forEach(function (element) {
+		element.addEventListener('click', function (e) {
+			var src = e.target.src;
+			document.querySelector('.popup .dl-yes').setAttribute('src', src);
+			document.querySelector('.download-popup').style.display = 'block';
+			document.querySelector('.download-popup').style.opacity = 1;
+		});
+	});
 }
+
+
+
+
+
+document.querySelector('.popup .dl-no').addEventListener('click', function (e) {
+	document.querySelector('.download-popup').style.opacity = 0;
+	document.querySelector('.download-popup').style.display = 'none';
+});
+
+document.querySelector('.popup .dl-yes').addEventListener('click', function (e) {
+	var e = {"src": document.querySelector('.popup .dl-yes').getAttribute('src')};
+	handleGiphyClick(e);
+	document.querySelector('.download-popup').style.opacity = 0;
+	document.querySelector('.download-popup').style.display = 'none';
+});

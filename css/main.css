@@ -102,9 +102,80 @@ body {
 	display: block;
 	float: left;
 	margin: 0.5rem;
+	cursor: pointer;
 }
 
 .container-image:hover {
 	border-radius: 1.5rem;
 	border-color: var(--highlight);
+}
+
+/* Download popup */
+
+.download-popup {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	display: none;
+	opacity: 0;
+}
+
+.download-popup .popup {
+	margin: 70px auto;
+	padding: 40px;
+	background: #fff;
+	border-radius: 5px;
+	width: 30%;
+	position: relative;
+	transition: all 5s ease-in-out;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1.3em;
+}
+
+.download-popup .popup div {
+	margin-top: 24px;
+	display: flex;
+	justify-content: space-between;
+	width: 60%;
+}
+
+.download-popup .popup div .btn {
+	padding: 12px;
+	padding-left: 24px;
+	padding-right: 24px;
+	text-decoration: none;
+	color: white;
+	border: 1px solid white;
+	border-radius: 1rem;
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+.download-popup .popup div .dl-yes {
+	background-color: #4CAF50;
+	border: 1px solid #4CAF50;
+}
+
+.download-popup .popup div .dl-yes:hover {
+	background-color: white;
+	border: 1px solid #4CAF50;
+	color: #4CAF50;
+}
+
+.download-popup .popup div .dl-no {
+	background-color: #DB5461;
+	border: 1px solid #DB5461;
+}
+
+.download-popup .popup div .dl-no:hover {
+	background-color: white;
+	border: 1px solid #DB5461;
+	color: #DB5461;
 }
