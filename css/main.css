@@ -19,7 +19,7 @@
 }
 
 body {
-	width: 80%;
+	width: 100%;
 	max-width: 1024px;
 	margin: 0 auto;
 	background-color: var(--background);
@@ -42,7 +42,7 @@ body {
 .header input[type=text] {
 	transition: 0.2s;
 	font-size: 1.5rem;
-	width: 80%;
+	width: 100%;
 	padding-left: 2rem;
 	height: 100%;
 	border: none;
@@ -81,7 +81,7 @@ body {
 
 @keyframes slideInFromTop {
   0% { transform: translateY(-400%); }
-  100% { transform: translateY(0); }
+  800% { transform: translateY(0); }
 }
 @keyframes slideInFromLeft {
   0% { transform: translateX(-400%); }
@@ -96,7 +96,7 @@ body {
 
 .container-image {
 	transition: 0.3s;
-	width: 30%;
+	width: 40%;
 	border-radius: 1.5rem 2px;
 	border: solid var(--foreground) 2px;
 	display: block;
