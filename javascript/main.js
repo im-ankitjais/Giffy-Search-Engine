@@ -95,3 +95,36 @@ document.querySelector('.popup .dl-yes').addEventListener('click', function (e) 
 	document.querySelector('.download-popup').style.opacity = 0;
 	document.querySelector('.download-popup').style.display = 'none';
 });
+
+function handleGiphyClick(e) {
+	file_url = e.src;
+	console.log("Downloading: " + file_url);
+	downloadGiphy(file_url, e);
+}
+
+function downloadGiphy(file_url) {
+	fetch(file_url)
+  	.then(response => response.blob())
+  	.then(blob => {
+			// Create a new FileReader innstance
+			const reader = new FileReader();
+			// Add a listener to handle successful reading of the blob
+			reader.addEventListener('load', () => {
+				const downloadLink = downloadBlob(blob, file_url.split('/').pop());
+				document.body.appendChild(downloadLink);
+				downloadLink.click()
+				document.body.removeChild(downloadLink);
+			});
+    // Start reading the content of the blob
+    // The result should be a base64 data URL
+    reader.readAsDataURL(blob);
+  });
+}
+
+function downloadBlob(blob, filename) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename || 'download';
+  return a;
+}
