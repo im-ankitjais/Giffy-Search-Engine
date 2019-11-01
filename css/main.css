@@ -96,7 +96,7 @@ body {
 
 .container-image {
 	transition: 0.3s;
-	width: 30%;
+	width: 100%;
 	border-radius: 1.5rem 2px;
 	border: solid var(--foreground) 2px;
 	display: block;
@@ -178,4 +178,10 @@ body {
 	background-color: white;
 	border: 1px solid #DB5461;
 	color: #DB5461;
+}
+.gif-image{
+	display: inline-block;
+    width: 28%;
+    margin-right: 5%;
+        min-height: 100px;
 }
