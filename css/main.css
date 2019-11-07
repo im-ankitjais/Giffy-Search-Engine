@@ -9,7 +9,7 @@
  */
 
 :root {
-	--background: #273E47;
+	--background: rgb(224,170,170);
 	--foreground: #FCFAF9;
 	--highlight: #DB5461;
 }
