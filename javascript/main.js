@@ -61,6 +61,11 @@ function pushToDOM(response) {
 	// we want to reset the div
 	container.innerHTML = "";
 
+	if (!images.length) {
+		container.innerHTML = "<h1>No results found =(<h1><br /><h2>Try a different search term</h2>"
+		return;
+	}
+
 	// loop through data array and add IMG html
 	images.forEach(function (image) {
 		// find img src
