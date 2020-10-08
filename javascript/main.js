@@ -72,7 +72,9 @@ function pushToDOM(response) {
 		var src = image.images.fixed_height.url;
 
 		// concatenate a new IMG tag
-		container.innerHTML += "<img src='" + src + "' class='container-image' />";
+		container.innerHTML += "<div class='gif-image'><img src='https://media1.tenor.com/images/8ac12962c05648c55ca85771f4a69b2d/tenor.gif?itemid=9212724'   data-src='" + src + "' class='lozad container-image' /></div>";
+		const observer = lozad();
+		observer.observe();
 	});
 
 	document.querySelectorAll('.container-image').forEach(function (element) {
