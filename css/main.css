@@ -15,11 +15,11 @@
 }
 
 * { /* Necessary for text inputs and buttons */
-	font-family: 'Josefin Sans', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 body {
-	width: 80%;
+	width: 100%;
 	max-width: 1024px;
 	margin: 0 auto;
 	background-color: var(--background);
